@@ -1,0 +1,28 @@
+<div class="body">
+  <div class="wrapper">
+    <form formGroup="loginForm" (ngSubmit)="getLoginForm()">
+      
+      <h2>Login</h2>
+      <div class="input-field">
+        <app-inputfield [FormControlName]="userIdValue" [placeholder]="userIdPlaceholder"></app-inputfield>
+      </div>
+      <span style="color: red;" *ngIf="userid && userid.invalid && userid.touched">* Please Enter User Id</span>
+      <div class="input-field">
+        <app-inputfield [FormControlName]="passwordValue" [placeholder]="passwordPlaceholder"></app-inputfield>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" #remember>
+          <p>Remember me</p>
+        </label>
+        <a>Forgot password?</a>
+      </div>
+      <app-loginbtn disabled="loginForm.invalid" [buttonTitle]="buttonTitle"></app-loginbtn>
+      <div class="register">
+        <p>Don't have an account? <a routerLink="register">Register</a></p>
+      </div>
+    </form>
+    
+  </div>
+  
+</div>
